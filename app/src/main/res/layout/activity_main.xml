@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo: R$ 0,00"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonRealizarPix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar PIX"
+        android:layout_below="@id/textViewSaldo"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonPagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar"
+        android:layout_below="@id/buttonRealizarPix"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonTransferir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transferir"
+        android:layout_below="@id/buttonPagar"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonDepositar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Depositar"
+        android:layout_below="@id/buttonTransferir"/>
+
+</RelativeLayout>
