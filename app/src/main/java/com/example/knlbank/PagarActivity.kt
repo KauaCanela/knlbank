@@ -1,30 +1,46 @@
 package com.example.knlbank
 
+import android.app.Activity
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 
 class PagarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagar)
+        setSupportActionBar(findViewById(R.id.toolbar3))
+        val btnConf = findViewById<Button>(R.id.btnPagar1)
+        val txtsaldo = intent.getStringExtra(AlarmClock.EXTRA_MESSAGE)
+        var nsaldo = txtsaldo.toString().toDouble()
 
-        val editTextDestinatario: EditText = findViewById(R.id.editTextDestinatario)
-        val editTextValor: EditText = findViewById(R.id.editTextValor)
-        val buttonPagar: Button = findViewById(R.id.buttonPagar)
 
-        buttonPagar.setOnClickListener {
-            val destinatario = editTextDestinatario.text.toString()
-            val valor = editTextValor.text.toString()
+        btnConf.setOnClickListener {
+            val data = Intent()
+            val edtPagar = findViewById<EditText>(R.id.edtCodBarra)
 
-            if (destinatario.isNotEmpty() && valor.isNotEmpty()) {
-                // Aqui você pode adicionar a lógica para efetuar o pagamento
-                Toast.makeText(this, "Pagamento de R$ $valor para $destinatario realizado com sucesso", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
+            val edtValor = findViewById<EditText>(R.id.edtValorPagar)
+            val nValor = edtValor.text.toString().toDouble()
+
+            if(nsaldo<nValor) {
+                Toast.makeText(this, "Saldo de $nsaldo é insuficiente", Toast.LENGTH_SHORT).show()
             }
+            else {
+                nsaldo -= nValor
+            }
+            val txtSaldo = nsaldo.toString()
+            data.putExtra("sSaldo",txtSaldo)
+            setResult(Activity.RESULT_OK,data)
+            Toast.makeText(this,"$nsaldo", Toast.LENGTH_SHORT).show()
+            edtPagar.setText("".toString())
+            edtValor.setText("".toString())
+            finish()
+
+
         }
     }
 }

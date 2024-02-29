@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".DepositarActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar5"
+        android:layout_width="411dp"
+        android:layout_height="113dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="?attr/actionModeCloseDrawable"
+        app:title="Depositar"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="4dp" />
+
     <EditText
-        android:id="@+id/editTextValorDepositar"
-        android:layout_width="match_parent"
+        android:id="@+id/edtValorDepositar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Digite o valor a depositar"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:hint="Digite o Valor:"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar5"
+        tools:layout_editor_absoluteX="28dp" />
 
     <Button
-        android:id="@+id/buttonDepositar"
-        android:layout_width="match_parent"
+        android:id="@+id/btnDepositar1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
         android:text="Depositar"
-        android:layout_below="@id/editTextValorDepositar"/>
-
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtValorDepositar"
+        app:layout_constraintVertical_bias="0.01"
+        tools:layout_editor_absoluteX="150dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

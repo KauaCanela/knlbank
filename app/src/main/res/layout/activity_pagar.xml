@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".PagarActivity">
 
-    <EditText
-        android:id="@+id/editTextValorPagar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Digite o valor a pagar"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="409dp"
+        android:layout_height="110dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="?attr/actionModeCloseDrawable"
+        app:title="Pagar"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="47dp"
+        android:text="Area de pagamento"
+        android:textSize="29sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
 
     <EditText
-        android:id="@+id/editTextBeneficiario"
-        android:layout_width="match_parent"
+        android:id="@+id/edtCodBarra"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Digite o beneficiário"
-        android:layout_below="@id/editTextValorPagar"
-        android:layout_marginBottom="16dp"/>
+        android:ems="10"
+        android:hint="Digite o codigo:"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424"
+        tools:layout_editor_absoluteX="52dp" />
+
+    <EditText
+        android:id="@+id/edtValorPagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Digite o Valor:"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561"
+        tools:layout_editor_absoluteX="52dp" />
 
     <Button
-        android:id="@+id/buttonPagar"
-        android:layout_width="match_parent"
+        android:id="@+id/btnPagar1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pagar"
-        android:layout_below="@id/editTextBeneficiario"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
